@@ -1,0 +1,422 @@
+@charset "UTF-8";
+
+
+
+body {
+  font-family: Times New Roman;
+}
+
+
+a {
+	
+	transition: 0.3s ease;
+	color: #786e10;
+	text-decoration: none;
+
+}
+a:hover {
+	color: ;
+  
+	opacity: 0.3;
+}
+
+
+#particles-js{ 
+	position:fixed;/*描画固定*/
+	width: 100%;
+	height: 100%;
+	background-color:#020E34;/*背景色*/
+}
+
+#wrapper{
+	position: relative;/*描画を#particles-jsよりも上にするためposition:relative;を指定*/
+	z-index: 1;/*z-indexの数字を大きくすることで描画を#particles-jsよりも上に*/
+	width: ;
+	height: ;
+
+}
+
+#wrapper img{
+	display: block;
+	width: 100%;
+	height: 100vh;
+
+	opacity: .3;
+}
+
+#wrapper p{
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	transform: translate(-50%, 0);
+
+	text-align: center;
+	font-size: 80px;
+	font-family: ;
+	color: pink;
+
+}
+@media screen and (max-width: 768px){
+	#wrapper p{
+		font-size: 60px;
+	}
+}
+
+
+.TextTyping {
+	text-align: center;
+}
+
+/*========= タイピング ===============*/
+
+.TextTyping span {
+	display: none;
+}
+
+/*文字列後ろの線の設定*/
+.TextTyping::after {
+ 	content: "|";
+	animation: typinganime .8s ease infinite;
+}
+
+@keyframes typinganime{
+	from{opacity:0}
+	to{opacity:1}
+}
+
+
+
+
+.container1 { 
+	width: ;
+	height: ;
+	
+	background-color: #ffffff;	
+   
+}
+	
+.item1{
+	position: absolute;
+	z-index: 10;
+	top: 50%;
+	left: 50%;
+	transform: translate(-40%, -10%);
+
+	width: 500px;
+	height: 500px;
+	opacity: .6;
+}
+
+/* ---- 画面幅768pxレイアウト関連 ---- */
+
+.inner {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width:768px) {
+  .inner {
+    max-width: ;
+  }
+}
+
+.sp-only {
+  display: block;
+}
+
+.pc-only {
+  display: none;
+}
+
+@media screen and (min-width:768px) {
+  .sp-only {
+    display: none;
+  }
+
+  .pc-only {
+    display: block;
+  }
+}
+
+
+/* ----- FOOTER ----- */
+
+footer {
+	position: relative;
+	padding: 20px;
+	text-align: center;
+	font-size: .5em;
+	font-family: sans-serif;
+
+	background-color: #BEB4A0;
+
+	z-index: 5;
+	opacity: .3;
+}
+address, small {
+	margin-bottom: 20px;
+	color: #000;
+}
+
+
+
+/* ----- header共通 ----- */
+
+
+header {
+  position: fixed;
+  opacity: .7;
+  z-index: 100;
+
+
+  display: flex; /*--ロゴ画像とボタンを横並びにする--*/
+  justify-content: center;
+  align-items: center;
+  
+  background-color: #BEB4A0;	/*-- appleみたいな色は、#2d2d2d --*/
+  opacity: ;
+  
+  margin: ;
+  padding: ;
+  width: 100%;
+      
+}
+
+
+
+/* ---- ロゴ ---- */
+		
+.header-logo {
+	
+  margin: 0 auto;
+  padding: ;
+
+  
+  position: relative;
+  top: 2px;
+  right: 35px;
+  
+}
+
+@media screen and (min-width: 768px) {
+	.header-logo {
+	
+		display: none;
+  
+	}
+}
+
+.header-logo img {
+		
+	margin: ;
+	padding: ;
+	
+
+}
+
+
+/* ---- ハンバーガーメニューボタン ---- */
+
+.header-button {
+  
+	display: flex; /*--上下左右中央に配置--*/
+	flex-wrap: ;
+	justify-content: ;
+	align-items: center;
+	
+	
+	border: none;
+	width: 75px;
+	height: 70px;
+	background-color: transparent;
+	color: ;
+	
+	margin: ;
+	padding: ;
+}
+
+@media screen and (min-width: 768px) {
+	.header-button {
+	
+		display: none; /*--PC表示では非表示にする--*/
+
+	}
+}
+
+
+		/*--ハンバーガーの形をCSSで表現--*/
+
+.header-button span {
+  display: block;
+  position: relative; /*--絶対配置の基準になる--*/
+  top: 0;
+  margin: 0 auto;
+  width: 24px; /*--線の長さ--*/
+  height: 3px; /*--線の太さ--*/
+  background-color: #fff;
+  transition: .3s ease;
+  
+  cursor: pointer;
+  
+}
+.header-button span::before,
+.header-button span::after {
+  content: ' ';
+  display: block;
+  
+  position: absolute;　/*--真ん中の線を基準に位置を指定--*/
+  left: 0;
+  width: 100%;
+  
+  height: 3px;
+  transition: all .3s; /*--ボタンが切り替わるときのアニメーション--*/
+  background-color: inherit;
+  
+  cursor: pointer;
+  
+}
+.header-button span::before {
+	
+  top: -9px; /*--真ん中の線（2本目の線)を基準に位置を指定*/
+  
+}
+.header-button span::after {
+  
+  top: 9px; /*--真ん中の線（2本目の線)を基準に位置を指定*/
+
+}
+
+
+
+
+
+		/*--ナビゲーションが表示された時のハンバーガーメニューボタン--*/
+body.open .header-button {
+  z-index: 200;
+}
+
+body.open .header-button span {
+  width: 30px;
+  background-color: transparent; /*--真ん中の線を透明にする--*/
+}
+
+body.open .header-button span::before,
+body.open .header-button span::after {
+	
+  top: 0; /*--回転に合わせて位置を調整--*/
+  background-color: #fff;
+
+}
+
+body.open .header-button span::before {
+  transform: rotate(45deg);/*--45度回転させる--*/
+}
+body.open .header-button span::after {
+  transform: rotate(-45deg);　/*--45度逆回転させる--*/
+}
+
+
+
+
+
+
+
+
+/* ---- ナビゲーション ---- */
+
+.header-nav {
+  list-style: none;
+  display: flex; /*- -上下左右中央に表示する--*/
+  flex-direction: column; /*--子要素の並べる向きrowは横--*/
+justify-content: center; /*--子要素の余白--*/
+  align-items: center;
+  
+  
+  position: fixed; /*--表示位置を固定--*/
+  
+  right: 0; /*--画面いっぱいに表示する--*/
+  top: 0; /*--"--*/
+  z-index: 100;
+  
+  
+  text-align: center;
+  
+  
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-family: Times New Roman;
+  font-size: 20px;
+  font-weight: 900;
+  transform: translateY(-100%); /*--X方向の移動距離を指定し、画面の右側に隠している--*/
+  transition: 1.0s ease;
+}
+@media screen and (min-width: 768px) {
+  .header-nav {
+    position: static;
+    flex-direction: row; /*--横並びにする--*/
+    width: ;
+    height: ;
+    background-color: transparent;
+    transform: none;
+	
+	margin: 14px;
+  }
+}
+
+
+.header-nav-item {
+	
+	display: inline-block;
+
+}
+
+.header-nav-item a {
+	
+	display: block;
+    padding: 1em;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.header-nav-item a::first-line {
+	
+	font-size: 20px;
+    font-weight: bold;
+}
+
+.header-nav-item a::fover {
+	
+	background: #cbc8c8;
+}
+		
+
+
+		/*--2番目以降の<li>が対象--*/
+.header-nav-item:nth-child(n+2) {
+  margin-top: 2em;
+}
+
+@media screen and (min-width: 768px) {
+  .header-nav-item:nth-child(n+2) {
+    margin-top: 0;
+    margin-left: 2em;
+  }
+}
+
+
+
+
+body.open .header-nav {    /*--ナビゲーションを開いた際のCSS--*/
+  transform: translateY(0);
+}
+.header-nav a {
+  text-decoration: none;
+}
+
+
+
+
